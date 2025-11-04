@@ -21,6 +21,11 @@ public class AmongUS
         jugador[3]="Alejo";
         jugador[4]="Lucas";
         jugador[5]="Miriam";
+
+        //definimos un impostor aleatorio.
+        int JugadorOculto = generator.nextInt(jugador.length);
+        String Impostor=jugador[JugadorOculto];
+
         //imprimimos Nombre//
         for(int jugadorInicial=0;jugadorInicial<jugador.length;jugadorInicial++)
         {
@@ -32,15 +37,12 @@ public class AmongUS
             String EleccionUsuario=lector.nextLine();
             System.out.print("El Jugador dice que es:" + EleccionUsuario +  "\n");
 
-            //definimos un impostor aleatorio.
-            int JugadorOculto = generator.nextInt(jugador.length);
-            String Impostor=jugador[JugadorOculto];
 
             for(int intento=1;intento<=4;intento++)
-            {if (Impostor == EleccionUsuario)
+            {if (Impostor.equals(EleccionUsuario) )
                 {
                     System.out.println("Has ganado!!!");
-                    
+
                 } else
 
                 {
